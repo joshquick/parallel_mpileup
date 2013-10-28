@@ -87,7 +87,7 @@ if __name__ == '__main__':
 	parser = argparse.ArgumentParser(description='This script is designed to speed up samtools mpileup by running a subregion per thread then merging the output.', formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 	parser.add_argument('fasta', help="Reference fasta")
 	parser.add_argument('bamfiles', help="File, list of input BAM files")
-	parser.add_argument('method', choices=['bcftools', 'varscan'], help="Default settings are: 'bcftools view -cegv -' and 'VarScan.v2.3.6.jar mpileup2snp --min-coverage 3 --min-reads2 2 --min-avg-qual 20 --min-var-freq 0.9 --p-value 0.005 --strand-filter 1 --output-vcf 1'")
+	parser.add_argument('method', choices=['bcftools', 'varscan'], help="Default settings are: 'bcftools view -cegv -' and 'VarScan.v2.3.6.jar mpileup2snp --min-coverage 2 --min-var-freq 0.9 --p-value 0.005'")
 	parser.add_argument('-t', '--threads', metavar='', help="Number of threads", default='32')
 	parser.add_argument('-c', '--chunk', metavar='', help="Chunk size in bases", default='250000')
 	parser.add_argument('-o', '--output', metavar='', help="Output suffix", default='merged')
